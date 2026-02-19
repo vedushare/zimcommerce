@@ -26,7 +26,8 @@ class EscrowService {
       }
 
       // Calculate commission and seller amount
-      const platformCommissionCents = Math.round(amountCents * config.commission.platformRate);
+      // Use Math.floor for consistent rounding (always rounds down)
+      const platformCommissionCents = Math.floor(amountCents * config.commission.platformRate);
       const sellerAmountCents = amountCents - platformCommissionCents;
 
       // Create transaction record

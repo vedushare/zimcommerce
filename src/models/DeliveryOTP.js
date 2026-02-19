@@ -10,7 +10,6 @@ module.exports = (sequelize) => {
     orderId: {
       type: DataTypes.UUID,
       allowNull: false,
-      unique: true,
       references: {
         model: 'orders',
         key: 'id'
